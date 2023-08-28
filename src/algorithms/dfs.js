@@ -8,7 +8,7 @@ function dfs2(grid,startNode,finishNode,visitedNodesInOrder,path)
     if(startNode.col===finishNode.col&&startNode.row===finishNode.row)
      {
        finishNode.isVisited=true;
-       const rt=path;
+      
         return [finishNode];
      }
      if(startNode.isWall)
@@ -46,19 +46,18 @@ function dfs2(grid,startNode,finishNode,visitedNodesInOrder,path)
 }
 export function dfs(grid, startNode, finishNode) {
     const visitedNodesInOrder = [];
-    const unvisitedNodes = getAllNodes(grid);
+  
     const path=[];
       console.log(startNode)
     const allpath=dfs2(grid,startNode,finishNode,visitedNodesInOrder,path);
     return allpath;
   }
   
-  function sortNodesByDistance(unvisitedNodes) {
-   
-  }
+ 
+
   
   function updateUnvisitedNeighbors(node, grid) {
-    const unvisitedNeighbors = getUnvisitedNeighbors(node, grid);
+    
     for (const neighbor of unvisitedNeighbors) {
       neighbor.distance = node.distance + 1;
       neighbor.previousNode = node;
@@ -76,7 +75,7 @@ export function dfs(grid, startNode, finishNode) {
   }
   
   function getAllNodes(grid) {
-    const nodes = [];
+    const nodes = []; 
     for (const row of grid) {
       for (const node of row) {
         nodes.push(node);

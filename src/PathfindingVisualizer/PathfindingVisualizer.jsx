@@ -52,14 +52,6 @@ const NavItem = styled.li`
   margin-left: 1.5rem;
 `;
 
-const NavLink = styled.a`
-  color: white;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
 export default class PathfindingVisualizer extends Component {
   constructor() {
     super();
