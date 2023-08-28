@@ -55,14 +55,7 @@ export function dfs(grid, startNode, finishNode) {
   
  
   
-  
-  function updateUnvisitedNeighbors(node, grid) {
-    const unvisitedNeighbors = getUnvisitedNeighbors(node, grid);
-    for (const neighbor of unvisitedNeighbors) {
-      neighbor.distance = node.distance + 1;
-      neighbor.previousNode = node;
-    }
-  }
+
   
   function getUnvisitedNeighbors(node, grid) {
     const neighbors = [];
@@ -74,16 +67,7 @@ export function dfs(grid, startNode, finishNode) {
     return neighbors.filter(neighbor => !neighbor.isVisited);
   }
   
-  function getAllNodes(grid) {
-    const nodes = []; 
-    for (const row of grid) {
-      for (const node of row) {
-        nodes.push(node);
-      }
-    }
-    return nodes;
-  }
-  
+
   // Backtracks from the finishNode to find the shortest path.
   // Only works when called *after* the dijkstra method above.
   export function getNodespath(finishNode) {
